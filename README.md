@@ -27,8 +27,8 @@ model = network([conv2d(k=5, channels=6, stride=1, activation="tanh"),
 model = init_weights(model, m_in, n_in);
 
 viu como é fácil? kkk 
-Para fazer uma época de treinamento, basta usar a função train_nn, e para fazer o treinamento completo basta colocar dentro de um loop. 
-Para avaliar o modelo em um dado conjunto de dados, basta usar a função evaluate_nn.
+Para fazer uma época de treinamento, basta usar a função train_nn, e para fazer o treinamento completo basta colocar dentro de um loop. Aqui, você também pode escolher qual otimizador você quer usar: Adam ou SGD.
+Para avaliar o modelo em um dado conjunto de dados, basta usar a função evaluate_nn. 
 
 No repositório, vou colocar também alguns exemplos em que eu uso a fran_torch para algumas tarefas simples: treinamento da LeNet5 com 10000 amostras da mnist, e avaliação na base de teste, treinamento de uma outra rede convolutiva para classificação da fmnist, também com um subconjunto de 10000 amostras para treino, e treinamento de um autoencoder convolutivo. 
 
@@ -66,7 +66,7 @@ model = init_weights(model, m_in, n_in);
 
 
 see how easy it is? haha
-To perform one training epoch, just use the function train_nn, and to perform full training just put it inside a loop.
+To perform one training epoch, just use the function train_nn, and to perform full training just put it inside a loop. Here, you can also choose the optimizer to use: Adam ou SGD.
 To evaluate the model on a given dataset, just use the function evaluate_nn.
 
 In the repository, I will also include some examples where I use fran_torch for some simple tasks: training LeNet5 with 10,000 MNIST samples (and evaluating on the test set), training another convolutional network for FMNIST classification also with a 10,000-sample training subset, and training a convolutional autoencoder.
