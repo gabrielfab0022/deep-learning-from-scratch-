@@ -32,9 +32,11 @@ Para avaliar o modelo em um dado conjunto de dados, basta usar a função evalua
 
 No repositório, vou colocar também alguns exemplos em que eu uso a fran_torch para algumas tarefas simples: treinamento da LeNet5 com 10000 amostras da mnist, e avaliação na base de teste, treinamento de uma outra rede convolutiva para classificação da fmnist, também com um subconjunto de 10000 amostras para treino, e treinamento de um autoencoder convolutivo. 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 English description: 
+
+
 This repository implements neural networks (MLP, CNN, Autoencoders) completely from scratch, without PyTorch / TensorFlow / Keras. All layers, forward pass, backward pass, training loop and optimizers were manually programmed.
 
 I named this little library fran_torch because my name is Francisco :) it is a minimalistic / homemade / educational PyTorch-style version, but implemented entirely by hand, for studying and deeply understanding the fundamentals (deep learning for me, in this case, not for the model haha).
