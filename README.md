@@ -1,45 +1,40 @@
 # deep-learning-from-scratch-
-Este repositório implementa redes neurais (MLP, CNN, Autoencoders) totalmente do zero, sem PyTorch / TensorFlow / Keras. Todas as camadas, forward, backward, loop de treino e otimizadores foram programados manualmente.
+This repository contains a collection of deep learning models and training pipelines implemented entirely in Julia, without relying on high-level frameworks such as PyTorch or TensorFlow.
 
-Dei o nome de fran_torch porque meu nome é Francisco :) uma versão minimalista / caseira / educacional do PyTorch, porém implementada inteiramente à mão, para estudo e aprendizado profundo dos fundamentos (aprendizado profundo meu, no caso, e não do modelo haha).
+The goal of this project is to develop a fundamental understanding of the mathematical and algorithmic principles behind modern neural networks — including forward and backward passes, gradient computation, optimization, convolution operations, and autoencoding — by building every component manually.
 
-Para usar o fran_torch basta definir um modelo como uma lista de structs, em que cada elemento da lista é uma camada da rede. No fran_torch, existem apenas 6 tipos de camadas: 
-conv2d (forward de uma camada de convolução 2d)
-maxpooling (camada de max pooling)
-flatten (converte um sinal 2d, com ---possivelmente --- múltiplos canais em um vetor)
-dense (camada densa)
-conv2d_transpose (camada de convolução transposta)
-softmax (camada de softmax)
-
-Para criar cada uma dessas camadas, basta definir uma struct e passar como parâmetro os atributos da camada. Por exemplo, para a convolução 2d eu preciso definir o tamanho dos kernels, a quantidade de kernels, o stride e a função de ativação. Para uma camada densa eu preciso definir a quantidade neurônios na saída e a função de ativação... Bom, melhor mostrando do que tá falando... aqui vai a definição de um modelo pequeno, inspirado na LeNet5: 
-
-model = network([conv2d(k=5, channels=6, stride=1, activation="tanh"),
-                 maxpooling(k=2, stride=2),
-                 conv2d(k=3, channels=16, stride=1, activation="tanh"),
-                 maxpooling(k=2, stride=2),
-                 flatten(),
-                 dense(n_out=120, activation="tanh"),
-                 dense(n_out=84, activation="tanh"),
-                 dense(n_out=10, activation="tanh"),
-                 softmax() 
-], 0, 0)
-
-model = init_weights(model, m_in, n_in);
-
-viu como é fácil? kkk 
-Para fazer uma época de treinamento, basta usar a função train_nn, e para fazer o treinamento completo basta colocar dentro de um loop. Aqui, você também pode escolher qual otimizador você quer usar: Adam ou SGD.
-Para avaliar o modelo em um dado conjunto de dados, basta usar a função evaluate_nn. 
-
-No repositório, vou colocar também alguns exemplos em que eu uso a fran_torch para algumas tarefas simples: treinamento da LeNet5 com 10000 amostras da mnist, e avaliação na base de teste, treinamento de uma outra rede convolutiva para classificação da fmnist, também com um subconjunto de 10000 amostras para treino, e treinamento de um autoencoder convolutivo. 
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-English description: 
-
-
-This repository implements neural networks (MLP, CNN, Autoencoders) completely from scratch, without PyTorch / TensorFlow / Keras. All layers, forward pass, backward pass, training loop and optimizers were manually programmed.
+This code was developed as a personal study project to deepen my conceptual understanding of deep learning and to ensure I can reason about models at the level required for research in theoretical machine learning.
 
 I named this little library fran_torch because my name is Francisco :) it is a minimalistic / homemade / educational PyTorch-style version, but implemented entirely by hand, for studying and deeply understanding the fundamentals (deep learning for me, in this case, not for the model haha).
+
+## **Implemented Features**
+### **Core Components** 
+- Fully-connected layers
+- Convolutional layers 
+- Transposed convolutional layers
+- Maxpooling layers
+- Softmax layers
+- Activation functions (ReLU, Sigmoid, Tanh)
+
+### **Models** 
+- Multilayer Perceptron (MLP) from scratch
+- Convolutional Neural Networks (CNNs)
+- Autoencoders
+
+### **Training and Optimization**
+- Mini-batch gradient descent
+- SGD and ADAM for optimization
+- Weight initialization schemes
+
+## **Key Learning Outcomes**
+- Explicit implementation of forward and backward passes
+- Understanding of gradient flow
+- Insights into optimization dynamics
+- Hands-on experience with low-level operations in a neural network
+- Ability to reason about architecture behavior without framework abstractions
+
+
+## **How to use it**
 
 To use fran_torch, you just need to define a model as a list of structs, where each element of the list is a layer of the network. In fran_torch, there are only 6 types of layers:
 conv2d (forward of a 2D convolution layer)
@@ -48,6 +43,7 @@ flatten (converts a 2D signal, with — possibly — multiple channels, into a v
 dense (fully connected layer)
 conv2d_transpose (transposed convolution layer)
 softmax (softmax layer)
+
 
 To create each of these layers, you just define a struct and pass the attributes of the layer as parameters. For example, for a 2D convolution I need to define the kernel size, the number of kernels, the stride and the activation function. For a dense layer I need to define the number of output neurons and the activation function… well, easier showing than explaining… here is the definition of a small model inspired by LeNet5:
 
