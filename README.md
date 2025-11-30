@@ -62,7 +62,8 @@ model = init_weights(model, m_in, n_in);
 
 
 see how easy it is? haha
-To perform one training epoch, just use the function train_nn, and to perform full training just put it inside a loop. Here, you can also choose the optimizer to use: Adam ou SGD.
-To evaluate the model on a given dataset, just use the function evaluate_nn.
+To perform one training epoch, just use the function train_nn, as in: train_nn(batches_indexes, training_inputs, ground_truth_outputs, optimizer)
+To perform full training just put it inside a loop. 
+To evaluate the model on a given dataset, just use the function evaluate_nn, as in: evaluate_nn(inputs, ground_truth_outputs)
 
 In the repository, I will also include some examples where I use fran_torch for some simple tasks: training LeNet5 with 10,000 MNIST samples (and evaluating on the test set), training another convolutional network for FMNIST classification also with a 10,000-sample training subset, and training a convolutional autoencoder.
