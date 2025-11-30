@@ -1,11 +1,11 @@
 # deep-learning-from-scratch-
-This repository contains a collection of deep learning models and training pipelines implemented entirely in Julia, without relying on high-level frameworks such as PyTorch or TensorFlow.
+This repository contains deep learning models and training pipelines implemented from scratch in Julia, without relying on high-level frameworks such as PyTorch or TensorFlow.
 
 The goal of this project is to develop a fundamental understanding of the mathematical and algorithmic principles behind modern neural networks — including forward and backward passes, gradient computation, optimization, convolution operations, and autoencoding — by building every component manually.
 
 This code was developed as a personal study project to deepen my conceptual understanding of deep learning and to ensure I can reason about models at the level required for research in theoretical machine learning.
 
-I named this little library fran_torch because my name is Francisco :) it is a minimalistic / homemade / educational PyTorch-style version, but implemented entirely by hand, for studying and deeply understanding the fundamentals (deep learning for me, in this case, not for the model haha).
+I named this little framework of mine fran_torch because my name is Francisco :) it is a minimalistic / homemade / educational PyTorch-style version, but implemented entirely by hand, for studying and deeply understanding the fundamentals (deep learning for me, in this case, not for the model haha).
 
 ## **Implemented Features**
 ### **Core Components** 
