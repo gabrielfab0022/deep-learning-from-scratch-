@@ -17,7 +17,7 @@ I named this little framework of mine fran_torch because my name is Francisco :)
 - Activation functions (ReLU, Sigmoid, Tanh)
 
 ### **Models** 
-- Multilayer Perceptron (MLP) from scratch
+- Multilayer Perceptron (MLP) 
 - Convolutional Neural Networks (CNNs)
 - Autoencoders
 
